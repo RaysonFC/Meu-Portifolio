@@ -1,0 +1,427 @@
+/* Resetando margens, paddings e box-sizing para garantir consistência entre navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos gerais do corpo */
+body {
+    font-family: Arial, sans-serif; /* Define a fonte padrão */
+    background-color: #1b1a17; /* Cor de fundo do corpo */
+    color: #F0E3CA; /* Cor padrão do texto */
+    line-height: 1.6; /* Define a altura da linha para uma leitura confortável */
+}
+
+/* Configuração do contêiner para centralizar o conteúdo */
+.container {
+    width: 70%; /* Largura do contêiner */
+    margin: 0 auto; /* Centraliza o contêiner */
+}
+
+/* Seção: Barra de Navegação */
+.navbar {
+    background-color: #333; /* Cor de fundo da barra de navegação */
+    color: #fff; /* Cor do texto na barra de navegação */
+    padding: 10px 0; /* Espaçamento interno (padding) da barra de navegação */
+    position: fixed; /* Mantém a barra de navegação fixa no topo da página */
+    width: 100%; /* Largura total da barra de navegação */
+    top: 0; /* Alinha a barra ao topo da página */
+    z-index: 1000; /* Garante que a barra fique acima de outros elementos */
+}
+
+.navbar .container {
+    display: flex; /* Usa flexbox para alinhamento dos itens */
+    justify-content: space-between; /* Distribui os itens com espaço entre eles */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+}
+
+.logo {
+    color: #fff; /* Cor padrão para o texto (Rayson) */
+    font-size: 24px; /* Tamanho da fonte */
+    font-weight: bold; /* Deixa o texto em negrito */
+}
+
+.logo .symbol,
+.logo .highlight {
+    color: #FFD700; /* Cor para os símbolos e o texto "Ferreira" */
+}
+
+.nav-links {
+    list-style: none; /* Remove o estilo de lista padrão dos links de navegação */
+}
+
+.nav-links li {
+    display: inline; /* Exibe os itens em linha */
+    margin-left: 20px; /* Espaçamento entre os itens */
+}
+
+.nav-links a {
+    color: #F0E3CA; /* Cor do texto dos links */
+    text-decoration: none; /* Remove o sublinhado padrão dos links */
+    position: relative; /* Necessário para a pseudo-classe ::after funcionar corretamente */
+    transition: transform 0.3s ease, color 0.3s ease; /* Transição suave para transformações e mudança de cor */
+}
+
+.nav-links a:hover {
+    transform: scale(1.1); /* Aumenta o tamanho do texto em 10% */
+    color: #FFD700; /* Altera a cor do texto ao passar o mouse (opcional) */
+}
+
+.nav-links a::after {
+    content: ''; /* Conteúdo vazio, usado apenas para a linha */
+    position: absolute; /* Posicionamento absoluto relativo ao link */
+    width: 0; /* Largura inicial da linha (invisível) */
+    height: 2px; /* Espessura da linha */
+    background-color: #F0E3CA; /* Cor da linha */
+    bottom: -5px; /* Posição da linha abaixo do texto */
+    left: 50%; /* Centraliza a linha horizontalmente em relação ao link */
+    transform: translateX(-50%); /* Ajuste de centralização */
+    transition: width 0.3s ease; /* Transição suave para a expansão da linha */
+}
+
+.nav-links a:hover::after, .nav-links a.active::after {
+    width: 100%; /* A linha se expande para a largura total do texto */
+}
+
+/* Seção: Home */
+.home-section {
+    background-color: #1b1a17; /* Cor de fundo da seção Home */
+    text-align: left; /* Alinhamento do texto à esquerda */
+    position: relative; /* Permite a utilização do overlay */
+    padding: 100px 0; /* Espaçamento interno (padding) na seção */
+    min-height: 100vh; /* Altura mínima de 100% da altura da tela */
+}
+
+.home-content {
+    display: flex; /* Usa flexbox para alinhar o texto e a imagem */
+    justify-content: space-between; /* Espaço entre o texto e a imagem */
+    align-items: center; /* Alinha o conteúdo verticalmente ao centro */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.home-text {
+    width: 60%; /* O texto ocupa 60% da largura do contêiner */
+}
+
+.home-image {
+    width: 35%; /* A imagem ocupa 35% da largura do contêiner */
+    text-align: right; /* Alinha a imagem à direita */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-in-out forwards 0.3s;
+}
+
+.home-image img {
+    max-width: 100%; /* Garante que a imagem não ultrapasse a largura do contêiner */
+    height: auto; /* Mantém a proporção original da imagem */
+    border-radius: 10px; /* Borda arredondada na imagem */
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Botão "Veja meus Projetos" */
+.cta-button-projects {
+    display: inline-block; /* Faz o botão se ajustar ao tamanho do conteúdo */
+    padding: 8px 16px; /* Reduz o espaçamento interno para diminuir o tamanho do botão */
+    background-color: #FFD700;
+    color: #1b1a17;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem; /* Reduz ligeiramente o tamanho da fonte */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    animation: pulse 1.5s infinite; /* Efeito de pulso */
+}
+
+.cta-button-projects:hover {
+    background-color: #f5c518;
+    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.highlights {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.highlights img {
+    max-width: 40px;
+    height: auto;
+}
+
+/* Seção: Sobre Mim */
+.sobre-section {
+    background-color: #333; /* Cor de fundo da seção Sobre Mim */
+    color: #F0E3CA; /* Cor do texto na seção Sobre Mim */
+    position: relative; /* Necessário para o posicionamento dos pseudo-elementos */
+    overflow: hidden; /* Esconde qualquer parte que saia da seção */
+    padding: 150px 0; /* Ajuste o padding para garantir espaço para as linhas */
+}
+
+.sobre-section::before,
+.sobre-section::after {
+    content: '';
+    position: absolute;
+    width: 200%; /* Largura das linhas para que se estendam além da seção */
+    height: 2px; /* Espessura das linhas */
+    background-color: #FFD700; /* Cor das linhas */
+}
+
+.sobre-section::before {
+    top: 0; /* Ajuste para a linha superior */
+    left: -50%; /* Centraliza a linha */
+    transform: rotate(45deg); /* Rotaciona a linha */
+}
+
+.sobre-section::after {
+    bottom: 0; /* Ajuste para a linha inferior */
+    left: -50%; /* Centraliza a linha */
+    transform: rotate(-45deg); /* Rotaciona a linha */
+}
+
+.sobre-content {
+    display: flex; /* Usa flexbox para alinhar o texto e as imagens lado a lado */
+    justify-content: space-between; /* Espaça o texto e as imagens horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    width: 100%; /* Define a largura total do conteúdo */
+}
+
+.sobre-text {
+    width: 60%; /* O texto ocupa 60% da largura do conteúdo */
+}
+
+h2 {
+    text-align: center; /* Alinhar texto da sessão sobre centralizado */
+}
+
+/* Seção: Projetos */
+.projetos-section {
+    background-color: #1b1a17; /* Cor de fundo da seção Projetos */
+    color: #F0E3CA; /* Cor do texto na seção Projetos */
+    padding: 100px 0; /* Espaçamento interno (padding) na seção */
+    min-height: 80vh; /* Altura mínima de 100% da altura da tela */
+}
+
+/* Layout em Grid Responsivo */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px; /* Espaçamento entre os cartões */
+}
+
+/* Estilos para os cartões de projeto */
+.project-card {
+    background-color: #333; /* Cor de fundo dos cartões */
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suavidade na transformação */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease-in-out forwards; /* Animação de entrada */
+}
+
+/* Efeito ao passar o mouse sobre os cartões */
+.project-card:hover {
+    transform: translateY(-10px); /* Eleva o cartão ao passar o mouse */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Aumenta a sombra */
+}
+
+/* Estilos para as imagens dos projetos */
+.project-image {
+    max-width: 100%; /* Garante que a imagem não ultrapasse a largura do cartão */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 5px; /* Bordas arredondadas na imagem */
+    margin-bottom: 15px; /* Espaçamento entre a imagem e o conteúdo */
+}
+
+/* Estilos para os títulos dos projetos */
+.project-card h3 {
+    font-size: 1.5rem;
+    color: #FFD700;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+/* Linha de sublinhado animado nos títulos */
+.project-card h3::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    background-color: #FFD700;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease;
+}
+
+/* Expande a linha ao passar o mouse sobre o título */
+.project-card h3:hover::after {
+    width: 100%;
+}
+
+/* Estilos para o texto descritivo dos projetos */
+.project-card p {
+    color: #ddd; /* Cor do texto descritivo nos cartões de projeto */
+}
+
+/* Estilos para os botões de ação */
+.project-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FFD700;
+    color: #1b1a17;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 15px; /* Espaçamento superior para separar do texto */
+}
+
+/* Efeito ao passar o mouse sobre os botões */
+.project-button:hover {
+    background-color: #f5c518;
+    transform: scale(1.05); /* Pequeno aumento ao passar o mouse */
+}
+
+/* Animação de entrada para os cartões de projeto */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Seção: Contato */
+.contato-section {
+    background-color: #333;
+    color: #F0E3CA;
+    text-align: center;
+    padding: 50px 0; /* Reduz o espaçamento interno */
+}
+
+.contact-form {
+    max-width: 400px; /* Ajuste da largura máxima para um tamanho menor */
+    margin: 0 auto; /* Centraliza o formulário */
+    background-color: #1b1a17;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #F0E3CA;
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #444;
+    color: #F0E3CA;
+    font-size: 1rem;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: #FFD700;
+    outline: none;
+    background-color: #555;
+}
+
+.cta-button-submit {
+    display: inline-block; /* Ajuste para inline-block */
+    padding: 10px 20px;
+    background-color: #FFD700;
+    color: #1b1a17;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 1.2rem;
+    margin-top: 10px; /* Reduz o espaçamento superior */
+    animation: pulse 1.5s infinite; /* Efeito de pulso */
+}
+
+.cta-button-submit:hover {
+    background-color: #f5c518;
+    transform: scale(1.05);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.social-links {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.social-links a {
+    margin: 0 10px;
+    display: inline-block;
+    color: #F0E3CA;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.social-links img {
+    width: 20px; /* Define o tamanho das imagens */
+    height: auto;
+    vertical-align: middle; /* Alinha verticalmente a imagem com o texto */
+    margin-right: 8px; /* Espaço entre a imagem e o texto */
+}
+
+.social-links a:hover {
+    transform: scale(1.05); /* Pequeno aumento ao passar o mouse */
+}
+
+.social-links a:hover img {
+    transform: scale(1.2); /* Aumenta a imagem ao passar o mouse */
+}
+
+/* Rodapé */
+footer {
+    background-color: #222; /* Cor de fundo do rodapé */
+    color: #F0E3CA; /* Cor do texto no rodapé */
+    text-align: center; /* Centraliza o texto no rodapé */
+    padding: 20px 0; /* Espaçamento interno (padding) no rodapé */
+}
+
+footer p {
+    margin: 0; /* Remove a margem padrão do parágrafo no rodapé */
+}
