@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Rayson Ferreira Cruz</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Tela de Carregamento -->
+    <div id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <aside class="sidebar fade-in">
+        <div class="profile-photo fade-in">
+            <img src="https://i.ibb.co/X59r0k7/imagen.png" alt="Rayson Ferreira Cruz">
+        </div>
+        <button class="toggle-btn fade-in" id="toggleBtn">☰</button>
+        <h2 class="fade-in">Rayson Ferreira Cruz</h2>
+        <nav class="fade-in">
+            <ul>
+                <li><a href="#sobre"><i class="fas fa-user"></i> <span>Sobre Mim</span></a></li>
+                <li><a href="#habilidades"><i class="fas fa-tools"></i> <span>Habilidades</span></a></li>
+                <li><a href="#projetos"><i class="fas fa-project-diagram"></i> <span>Projetos</span></a></li>
+                <li><a href="#contato"><i class="fas fa-envelope"></i> <span>Contato</span></a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="content">
+        <section id="sobre" class="sobre-section fade-in">
+            <div class="sobre-content fade-in">
+                <img src="https://i.ibb.co/k16bnWc/Frame-1-1.png" alt="Rayson Ferreira Cruz" class="sobre-foto fade-in">
+                <div class="sobre-textos fade-in">
+                    <h1 class="fade-in">Sobre Mim</h1>
+                    <div class="carrossel fade-in">
+                        <div class="carrossel-item active fade-in">
+                            <p>
+                                Olá! Eu sou <strong>Rayson Ferreira Cruz</strong>, formado em Análise e Desenvolvimento de Sistemas pela Estácio em 2021. Sou um profissional dinâmico e dedicado, com ampla experiência em gestão, liderança e habilidades técnicas em Python, SQL, Power BI e muito mais.
+                            </p>
+                        </div>
+                        <div class="carrossel-item fade-in">
+                            <p>
+                                Tenho paixão por tecnologia e inovação, sempre buscando aprimorar minhas habilidades e enfrentar novos desafios. Além disso, gosto de trabalhar com dados, desenvolver soluções criativas e colaborar em equipes para alcançar resultados significativos.
+                            </p>
+                        </div>
+                        <div class="carrossel-item fade-in">
+                            <p>
+                                Meu objetivo é continuar crescendo como profissional, assumindo novas responsabilidades e contribuindo positivamente para projetos que impactem a vida das pessoas. Estou sempre pronto para aprender e me adaptar a novas situações, mantendo um espírito otimista e uma excelente comunicação.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="carrossel-controles fade-in">
+                        <button class="btn-anterior fade-in">&#10094;</button>
+                        <button class="btn-proximo fade-in">&#10095;</button>
+                    </div>
+                    <div class="sobre-botoes fade-in">
+                        <a href="https://www.linkedin.com/in/rayson-ferreira-cruz-839596143" target="_blank" class="btn-linkedin fade-in">
+                            <i class="fab fa-linkedin"></i> Conecte-se comigo no LinkedIn
+                        </a>
+                        <a href="#contato" class="btn-contato fade-in">
+                            <i class="fas fa-envelope"></i> Entre em Contato
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="habilidades" class="fade-in">
+            <h2 class="fade-in">Habilidades</h2>
+            <div class="skills-container fade-in">
+                <div class="skills-section fade-in">
+                    <div class="skill fade-in" data-skill="JavaScript">
+                        <img src="https://i.ibb.co/SfMRkKM/java.png" alt="JavaScript" class="skill-icon fade-in">
+                        <div class="skill-level fade-in">
+                            <span class="dot filled fade-in"></span>
+                            <span class="dot filled fade-in"></span>
+                            <span class="dot fade-in"></span>
+                            <span class="dot fade-in"></span>
+                            <span class="dot fade-in"></span>
+                        </div>
+                    </div>
+                    <div class="skill fade-in" data-skill="SQL Server">
+                        <img src="https://i.ibb.co/4JNQH6v/sql.png" alt="SQL Server" class="skill-icon fade-in">
+                        <div class="skill-level fade-in">
+                            <span class="dot filled fade-in"></span>
+                            <span class="dot filled fade-in"></span>
+                            <span class="dot filled fade-in"></span>
+                            <span class="dot fade-in"></span>
+                            <span class="dot fade-in"></span>
+                        </div>
+                    </div>
+                    <div class="skill fade-in" data-skill="CSS">
+                        <img src="https://i.ibb.co/4mLJmN9/css.png" alt="CSS" class="skill-icon fade-in">
+                        <div class="skill-level fade-in">
+                            <span class="dot filled fade-in"></span>
+                            <span class="dot filled fade-in"></span>
+                            <span class="dot filled fade-in"></span>
+                            <span class="dot fade-in"></span>
+                            <span class="dot fade-in"></span>
+                        </div>
+                    </div>
+                    <div class="skill fade-in" data-skill="HTML">
+                        <img src="https://i.ibb.co/LYdvy1K/html.png" alt="HTML" class="skill-icon fade-in">
+                        <div class="skill-level fade-in">
+                            <span class="dot filled fade-in"></span>
+                            <span class="dot filled fade-in"></span>
+                            <span class="dot filled fade-in"></span>
+                            <span class="dot fade-in"></span>
+                            <span class="dot fade-in"></span>
+                        </div>
+                    </div>
+                    <div class="skill fade-in" data-skill="Python">
+                        <img src="https://i.ibb.co/NmBNm7s/python.png" alt="Python" class="skill-icon fade-in">
+                        <div class="skill-level fade-in">
+                            <span class="dot filled fade-in"></span>
+                            <span class="dot filled fade-in"></span>
+                            <span class="dot filled fade-in"></span>
+                            <span class="dot fade-in"></span>
+                            <span class="dot fade-in"></span>
+                        </div>
+                    </div>
+                    <div class="skill fade-in" data-skill="Power BI">
+                        <img src="https://i.ibb.co/8x7dC2X/powerbi.png" alt="Power BI" class="skill-icon fade-in">
+                        <div class="skill-level fade-in">
+                            <span class="dot filled fade-in"></span>
+                            <span class="dot filled fade-in"></span>
+                            <span class="dot filled fade-in"></span>
+                            <span class="dot filled fade-in"></span>
+                            <span class="dot fade-in"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-card-container fade-in" id="skillCardContainer">
+                    <p class="fade-in">Selecione uma habilidade para ver os detalhes.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projetos" class="fade-in">
+            <h2 class="fade-in">Projetos</h2>
+
+            <div class="projetos-analise fade-in">
+                <h3 class="fade-in">Análise de Dados</h3>
+                <div class="projetos-cards fade-in">
+                    <div class="projeto-card fade-in">
+                        <img src="https://via.placeholder.com/300x200" alt="Dashboard de Vendas" class="projeto-imagem fade-in">
+                        <h4 class="fade-in">Projeto 1: Dashboard de Vendas</h4>
+                        <p class="fade-in">Desenvolvimento de um dashboard interativo utilizando Power BI para análise de vendas mensais e insights estratégicos.</p>
+                        <a href="#" target="_blank" class="btn-projeto fade-in">Ver Projeto</a>
+                    </div>
+                    <div class="projeto-card fade-in">
+                        <img src="https://via.placeholder.com/300x200" alt="Análise de Dados de Clientes" class="projeto-imagem fade-in">
+                        <h4 class="fade-in">Projeto 2: Análise de Dados de Clientes</h4>
+                        <p class="fade-in">Análise exploratória de dados de clientes utilizando Python e Pandas, focando em segmentação e comportamento de compra.</p>
+                        <a href="#" target="_blank" class="btn-projeto fade-in">Ver Projeto</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="projetos-web fade-in">
+                <h3 class="fade-in">Desenvolvimento Web</h3>
+                <div class="projetos-cards fade-in">
+                    <div class="projeto-card fade-in">
+                        <img src="https://via.placeholder.com/300x200" alt="Site de Portfólio" class="projeto-imagem fade-in">
+                        <h4 class="fade-in">Projeto 1: Site de Portfólio</h4>
+                        <p class="fade-in">Criação de um site de portfólio responsivo utilizando HTML, CSS, e JavaScript, destacando habilidades e projetos.</p>
+                        <a href="#" target="_blank" class="btn-projeto fade-in">Ver Projeto</a>
+                    </div>
+                    <div class="projeto-card fade-in">
+                        <img src="https://via.placeholder.com/300x200" alt="Aplicação Web de Cadastro" class="projeto-imagem fade-in">
+                        <h4 class="fade-in">Projeto 2: Aplicação Web de Cadastro</h4>
+                        <p class="fade-in">Desenvolvimento de uma aplicação web para cadastro de usuários com backend em Node.js e banco de dados SQL Server.</p>
+                        <a href="#" target="_blank" class="btn-projeto fade-in">Ver Projeto</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="contato-section fade-in">
+            <h2 class="fade-in">Contato</h2>
+            <div class="contato-content fade-in">
+                <div class="contato-info fade-in">
+                    <p class="fade-in"><i class="fas fa-phone-alt"></i> +55 (92) 98485-9079</p>
+                    <p class="fade-in"><i class="fas fa-envelope"></i> raysandra27@gmail.com</p>
+                </div>
+                <form action="#" method="POST" class="form-contato fade-in">
+                    <input type="text" name="nome" placeholder="Seu Nome" required class="fade-in">
+                    <input type="email" name="email" placeholder="Seu E-mail" required class="fade-in">
+                    <textarea name="mensagem" rows="4" placeholder="Sua Mensagem" required class="fade-in"></textarea>
+                    <button type="submit" class="btn-form-contato fade-in">Enviar</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+
+    <!-- Script para esconder a tela de carregamento com atraso de 4 segundos -->
+    <script>
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const loadingScreen = document.getElementById('loading');
+                loadingScreen.classList.add('hidden');
+            }, 4000); // Atraso de 4 segundos
+        });
+    </script>
+</body>
+</html>
