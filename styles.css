@@ -19,7 +19,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 2000; /* Garante que o loader esteja acima de todos os elementos */
+    z-index: 2000;
     transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
@@ -32,7 +32,6 @@ body {
     animation: spin 1s linear infinite;
 }
 
-/* Definindo a animação de rotação */
 @keyframes spin {
     0% {
         transform: rotate(0deg);
@@ -42,7 +41,6 @@ body {
     }
 }
 
-/* Esconde o loader quando a classe 'hidden' é adicionada */
 #loading.hidden {
     opacity: 0;
     visibility: hidden;
@@ -55,10 +53,21 @@ body {
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-/* Classe que ativa o efeito de surgimento */
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Animação para o texto da seção "Sobre Mim" */
+.sobre-textos p.fade-in {
+    opacity: 0;
+    transform: translateY(20px); 
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; 
+}
+
+.sobre-textos p.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0); 
 }
 
 /* Estilos da barra lateral */
@@ -144,7 +153,7 @@ body {
 }
 
 .sidebar.collapsed nav ul li a span {
-    display: none; /* Oculta os textos das seções quando a sidebar está recolhida */
+    display: none;
 }
 
 .sidebar nav ul li a:hover {
@@ -160,6 +169,8 @@ body {
     margin-bottom: 20px;
     color: #f0f0f0;
     flex-wrap: wrap;
+    min-height: 300px;
+    align-items: center;
 }
 
 .sobre-content {
@@ -170,24 +181,25 @@ body {
 }
 
 .sobre-foto {
-    flex: 1 1 300px;
+    flex: 1 1 250px;
     max-width: 100%;
     object-fit: contain;
     border-radius: 8px 0 0 8px;
+    height: auto;
 }
 
 .sobre-textos {
     flex: 2;
-    padding: 20px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 20px;
+    gap: 10px;
 }
 
 h1 {
     margin: 0;
-    font-size: 24px;
+    font-size: 22px;
     color: #f0f0f0;
 }
 
@@ -209,8 +221,8 @@ h1 {
 .carrossel-controles {
     display: flex;
     justify-content: center;
-    gap: 10px;
-    margin-top: 10px;
+    gap: 5px;
+    margin-top: 5px;
 }
 
 .btn-anterior,
@@ -232,21 +244,21 @@ h1 {
 
 .sobre-botoes {
     display: flex;
-    gap: 10px;
-    margin-top: 20px;
+    gap: 5px;
+    margin-top: 10px;
     flex-wrap: wrap;
 }
 
 .btn-linkedin,
 .btn-contato {
     text-decoration: none;
-    padding: 10px 15px;
+    padding: 8px 12px;
     border-radius: 5px;
     font-weight: bold;
     display: flex;
     align-items: center;
     gap: 5px;
-    font-size: 14px;
+    font-size: 12px;
     transition: background-color 0.3s;
 }
 
@@ -268,6 +280,7 @@ h1 {
     background-color: #3e3e5b;
 }
 
+/* Estilos dos projetos e habilidades */
 .projetos-analise,
 .projetos-web {
     margin-top: 20px;
@@ -324,6 +337,7 @@ h1 {
     background-color: #3e3e5b;
 }
 
+/* Estilos das habilidades */
 .skill-card-container {
     flex: 1;
     padding: 20px;
@@ -407,6 +421,7 @@ h1 {
     background-color: #50fa7b;
 }
 
+/* Estilos do formulário de contato */
 .form-contato {
     display: flex;
     flex-direction: column;
@@ -444,6 +459,7 @@ h1 {
     background-color: #3e3e5b;
 }
 
+/* Responsividade */
 .content {
     margin-left: 200px;
     padding: 20px;
@@ -472,7 +488,7 @@ p {
 
     .sidebar h2,
     .sidebar nav ul li a span {
-        display: none; /* Esconde o texto do título e das seções */
+        display: none;
     }
 
     .profile-photo {
@@ -500,7 +516,7 @@ p {
     }
 
     .content {
-        margin-left: 60px; /* Ajusta o conteúdo principal para a largura da sidebar reduzida */
+        margin-left: 60px;
     }
 }
 
