@@ -282,7 +282,7 @@ h1 {
 }
 
 .projeto-card {
-    background-color: #3e3e5b;
+    background-color: #2d2d3b;
     padding: 10px;
     border-radius: 8px;
     transition: transform 0.3s, box-shadow 0.3s;
@@ -377,7 +377,7 @@ h1 {
 }
 
 .skill-card {
-    background-color: #3e3e5b;
+    background-color: #2d2d3b;
     border-radius: 8px;
     padding: 10px;
     text-align: center;
