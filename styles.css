@@ -166,7 +166,6 @@ body {
     flex: 1;
     gap: 20px;
     flex-wrap: wrap;
-    justify-content: center; /* Centraliza os itens em telas menores */
 }
 
 .sobre-foto {
@@ -270,25 +269,14 @@ h1 {
 }
 
 /* Estilos dos projetos e habilidades */
-.projetos-analise,
-.projetos-web {
-    margin-top: 20px;
-}
-
-.projetos-cards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-}
-
-.projeto-card {
-    background-color: #2d2d3b;
+.projeto-card, .skill-card {
+    background-color: #2D2D3B;
     padding: 10px;
     border-radius: 8px;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.projeto-card:hover {
+.projeto-card:hover, .skill-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
@@ -328,38 +316,41 @@ h1 {
     background-color: #3e3e5b;
 }
 
-/* Responsividade para os projetos */
-@media (max-width: 768px) {
+/* Responsividade dos cards de projetos */
+/* 3 cards por linha em telas grandes */
+.projetos-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cards por linha */
+    gap: 15px;
+}
+
+/* Ajuste para tablets: 3 cards por linha */
+@media (max-width: 1024px) {
     .projetos-cards {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .projeto-card {
-        padding: 8px;
-    }
-
-    .projeto-imagem {
-        height: 120px;
+        grid-template-columns: repeat(3, 1fr); /* Mantém 3 cards em tablets */
     }
 }
 
+/* Responsividade para tablets menores: 2 cards por linha */
+@media (max-width: 768px) {
+    .projetos-cards {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards por linha no mobile */
+    }
+}
+
+/* Ajuste para mobile: 2 cards por linha */
 @media (max-width: 480px) {
     .projetos-cards {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr); /* Mantém 2 cards em telas muito pequenas */
     }
+}
 
-    .projeto-imagem {
-        height: 100px;
-    }
+.projeto-card {
+    padding: 10px;
+}
 
-    .projeto-card {
-        padding: 8px;
-    }
-
-    .btn-projeto {
-        font-size: 10px;
-        padding: 5px 8px;
-    }
+.projeto-imagem {
+    height: 120px;
 }
 
 /* Estilos das habilidades */
@@ -372,22 +363,17 @@ h1 {
 
 .skills-section {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* Todos os cards em uma única linha no desktop */
     gap: 15px;
 }
 
 .skill-card {
-    background-color: #2d2d3b;
+    background-color: #3e3e5b;
     border-radius: 8px;
     padding: 10px;
     text-align: center;
     width: 110px;
     transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.skill-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .skill-icon {
@@ -481,6 +467,24 @@ h1 {
     background-color: #3e3e5b;
 }
 
+/* Estilos das redes sociais */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.social-icons a {
+    color: #f0f0f0;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #50fa7b;
+}
+
 /* Responsividade */
 .content {
     margin-left: 200px;
@@ -501,17 +505,8 @@ p {
     line-height: 1.6;
 }
 
-/* Ajustes de responsividade para telas menores */
+/* Responsividade para telas menores */
 @media (max-width: 768px) {
-    .skills-section {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .sobre-content {
-        flex-direction: column;
-        align-items: center;
-    }
-
     .sidebar {
         width: 60px;
         padding-top: 10px;
@@ -549,13 +544,31 @@ p {
     .content {
         margin-left: 60px;
     }
+
+    #projetos {
+        display: block;
+    }
+
+    .projetos-cards {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .projeto-card {
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    .projeto-imagem {
+        height: 100px;
+    }
+
+    .btn-projeto {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
 }
 
 @media (max-width: 480px) {
-    .skills-section {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
     .profile-photo {
         width: 40px;
         height: 40px;
@@ -587,8 +600,12 @@ p {
         padding: 10px;
     }
 
+    #projetos {
+        display: block;
+    }
+
     .projetos-cards {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .projeto-card {
