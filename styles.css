@@ -6,6 +6,7 @@ body {
     background-color: #1e1e2f;
     color: #f0f0f0;
     scroll-behavior: smooth;
+    overflow-x: hidden; /* Evitar rolagem horizontal */
 }
 
 /* Estilo para a tela de carregamento */
@@ -334,12 +335,14 @@ h1 {
     grid-template-columns: repeat(6, 1fr); /* 6 cards por linha no desktop */
     gap: 20px; /* Aumentando o espaçamento entre os cards */
     justify-items: center; /* Centraliza os cards */
+    padding: 0; /* Remove qualquer padding extra */
 }
 
 /* Ajuste para tablets: 4 cards por linha */
 @media (max-width: 1024px) {
     .projetos-cards {
         grid-template-columns: repeat(4, 1fr); /* 4 cards por linha em tablets */
+        padding: 0 10px; /* Ajustando o padding */
     }
 }
 
@@ -347,6 +350,8 @@ h1 {
 @media (max-width: 768px) {
     .projetos-cards {
         grid-template-columns: repeat(2, 1fr); /* 2 cards por linha no mobile */
+        padding: 0 10px; /* Ajustando padding para evitar colar nas bordas laterais */
+        justify-content: center; /* Centraliza os cards no mobile */
     }
 }
 
@@ -366,6 +371,7 @@ h1 {
 @media (max-width: 768px) {
     .projeto-card {
         max-width: 100%; /* Garante que os cards se ajustem em telas menores */
+        padding: 0 5px; /* Adicionando padding lateral nos cards */
     }
 }
 
@@ -377,6 +383,11 @@ h1 {
     .projeto-card {
         padding: 6px;
         margin-bottom: 15px;
+    }
+
+    .projetos-cards {
+        padding: 0 15px; /* Ajuste de padding para evitar colagem nas laterais */
+        justify-content: center; /* Centraliza os cards em telas muito pequenas */
     }
 
     .btn-projeto {
@@ -583,6 +594,8 @@ p {
 
     .projetos-cards {
         grid-template-columns: repeat(2, 1fr); /* 2 cards por linha em telas menores */
+        padding: 0 15px; /* Adicionando padding lateral */
+        justify-content: center; /* Centraliza os cards */
     }
 
     .projeto-card {
@@ -638,11 +651,13 @@ p {
 
     .projetos-cards {
         grid-template-columns: repeat(2, 1fr);
+        padding: 0 15px 0 0; /* Adicionando padding para centralizar */
+        justify-content: center; /* Centraliza os cards no mobile */
     }
 
     .projeto-card {
         padding: 6px;
-        margin-bottom: 10px;
+        margin-bottom: 2px;
     }
 
     .projeto-imagem {
